@@ -95,6 +95,7 @@ export default {
           isEdit: false,
           loading: false,
           systems: [
+            { label: "Flutter", value: "flutter" },
             {label: "安卓", value: "ANDROID"},
             {label: "苹果", value: "APPLE"}
           ],

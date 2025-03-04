@@ -112,7 +112,7 @@ export default {
             },
             newCaseType:"API",
             caseTypes:["API", "WEB", "APP"],
-            systems: ["android", "apple"],
+            systems: ["android", "apple","flutter"],
             searchForm: {
                 page: 1,
                 limit: 10,

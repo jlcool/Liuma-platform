@@ -172,6 +172,10 @@ public class CaseJsonCreateService {
             testCaseApp.setDeviceSystem(device.getSystem());
             if(device.getSystem().equals("android")) {
                 testCaseApp.setDeviceUrl(JSONObject.parseObject(device.getSources()).getString("atxAgentAddress"));
+            }else if(device.getSystem().equals("ios")) {
+                testCaseApp.setDeviceUrl(JSONObject.parseObject(device.getSources()).getString("wdaUrl"));
+            }else if(device.getSystem().equals("flutter")) {
+                testCaseApp.setDeviceUrl(JSONObject.parseObject(device.getSources()).getString("flutterWs"));
             }else {
                 testCaseApp.setDeviceUrl(JSONObject.parseObject(device.getSources()).getString("wdaUrl"));
             }
@@ -221,9 +225,13 @@ public class CaseJsonCreateService {
             if(deviceId != null) {  // 测试集合或测试计划执行时设备可能不在线 无法执行 将在引擎返回的执行日志中提示
                 Device device = deviceMapper.getDeviceById(deviceId);
                 testCaseApp.setDeviceSystem(device.getSystem());
-                if (device.getSystem().equals("android")) {
+                if(device.getSystem().equals("android")) {
                     testCaseApp.setDeviceUrl(JSONObject.parseObject(device.getSources()).getString("atxAgentAddress"));
-                } else {
+                }else if(device.getSystem().equals("ios")) {
+                    testCaseApp.setDeviceUrl(JSONObject.parseObject(device.getSources()).getString("wdaUrl"));
+                }else if(device.getSystem().equals("flutter")) {
+                    testCaseApp.setDeviceUrl(JSONObject.parseObject(device.getSources()).getString("flutterWs"));
+                }else {
                     testCaseApp.setDeviceUrl(JSONObject.parseObject(device.getSources()).getString("wdaUrl"));
                 }
             }

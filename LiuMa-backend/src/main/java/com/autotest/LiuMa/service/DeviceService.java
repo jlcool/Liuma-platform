@@ -33,9 +33,9 @@ public class DeviceService {
     }
 
     public void coldDevice(Device device) {
-        device.setStatus(DeviceStatus.COLDING.toString());
+        //device.setStatus(DeviceStatus.COLDING.toString());
         device.setUpdateTime(System.currentTimeMillis());
-        device.setSources("{}");
+        //device.setSources("{}");//注释，防止每次都要重新设置
         device.setUser("");
         device.setTimeout(0);
         deviceMapper.updateDevice(device);

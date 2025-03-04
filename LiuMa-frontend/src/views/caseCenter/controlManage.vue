@@ -7,6 +7,7 @@
     <el-form :inline="true" :model="searchForm">
         <el-form-item label="">
             <el-radio-group size="small" v-model="searchForm.system" @change="selectSystem">
+                <el-radio-button label="flutter"/>
                 <el-radio-button label="android"/>
                 <el-radio-button label="apple"/>
             </el-radio-group>
@@ -98,6 +99,7 @@ export default {
                 data: "",
             },
             systems:[
+                { label: "Flutter", value: "flutter" },
                 { label: "安卓", value: "android" },
                 { label: "苹果", value: "apple" },
             ],
@@ -106,7 +108,7 @@ export default {
                 limit: 10,
                 condition: "",
                 moduleId: "",
-                system: "android"
+                system: "flutter"
             },
             controlListData: [],
             pageparam: {

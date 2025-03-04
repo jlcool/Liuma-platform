@@ -73,6 +73,7 @@ export default {
             propList: [],
             treeData: [],
             systems:[
+                { label: "Flutter", value: "flutter" },
                 { label: "安卓", value: "android" },
                 { label: "苹果", value: "apple" },
             ],

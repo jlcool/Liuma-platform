@@ -4,8 +4,8 @@
 <template>
     <div>
         <div class="disabled-view" v-if="device.status==='testing'"/>
-        <el-row :gutter="10">
-            <el-col :span="6">
+        <el-col>     
+            <el-col :span="24">
                 <div class="screen-header">
                     <div style="float:left; margin: 12px 4px" class="long-text">
                         <el-tooltip :content="device.serial" placement="bottom">
@@ -16,7 +16,7 @@
                         <el-button type="danger" size="mini" @click="stopUsing" round :disabled="device.serial===null">停用</el-button>
                     </div>
                 </div>
-                <div class="screen-body" :style="'height: '+ screenHeight +'px'">
+                <div class="screen-body" :style="'height: 400px'">
                     <video id="screen-player" class="scrcpy-screen" muted autoplay></video>
                     <span class="finger finger-0" style="transform: translate3d(200px, 100px, 0px)"></span>
                     <span class="finger finger-1" style="transform: translate3d(200px, 100px, 0px)"></span>
@@ -32,8 +32,8 @@
                         <i class="el-icon-caret-left device-sys-btn"/>
                     </el-button>
                 </div>
-            </el-col>
-            <el-col :span="18">
+            </el-col>       
+            <el-col :span="24">
                 <el-tabs v-model="activeName" @tab-click="handleTabClick">
                     <el-tab-pane label="常用功能" name="common">
                         <div class="card-columns" ref="commonContainer">
@@ -115,7 +115,7 @@
                     </el-tab-pane>
                 </el-tabs>
             </el-col>
-        </el-row>
+    </el-col>
     </div>
 </template>
 <script>
@@ -143,8 +143,8 @@ export default {
                     atxAgentAddress: null
                 }
             },
-            screenWidth: 300,
-            screenHeight: 500,
+            screenWidth: 500,
+            screenHeight: 300,
             activeName: 'common',
             websockets: {
                 screen:null,
